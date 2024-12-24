@@ -1,0 +1,12 @@
+﻿@model CS68_MVC01.Models.ProductModel
+
+<div class="card bg-info text-white">
+	<h1 class="card-header">@Model.Name</h1>
+	@*ở đây nhận từ controller 1 chuỗi, nên model sử dụng là string*@
+	<div class="card-body">
+		<p class="card-text">Giá: @Model.Price</p>
+		
+	</div>
+</div>
+<hr />
+@this.Path

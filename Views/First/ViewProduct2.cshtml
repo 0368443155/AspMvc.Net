@@ -1,0 +1,16 @@
+﻿@model CS68_MVC01.Models.ProductModel 
+@*ở đây Model sẽ null*@
+@{
+	var product = ViewData["product"] as ProductModel;
+}
+<p>@ViewData["Title"]</p>
+<div class="card bg-primary text-white">
+	<h1 class="card-header">@product.Name</h1>
+	@*ở đây nhận từ controller 1 chuỗi, nên model sử dụng là string*@
+	<div class="card-body">
+		<p class="card-text">Giá: @product.Price</p>
+		
+	</div>
+</div>
+<hr />
+@this.Path

@@ -1,0 +1,13 @@
+﻿@model string
+@{
+	Layout = "_Layout";
+}
+<div class="card bg-success text-white">
+	<h1 class="card-header">Xin chào @Model</h1>
+	@*ở đây nhận từ controller 1 chuỗi, nên model sử dụng là string*@
+	<div class="card-body">
+		<p class="card-text">Bạn đang tìm hiểu về View trong MVC</p>
+	</div>
+</div>
+<hr />
+@this.Path
