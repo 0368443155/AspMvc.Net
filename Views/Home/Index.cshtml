@@ -1,8 +1,53 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    //Url.Action();
+    //Url.ActionLink();
 }
 <partial name="_AlertMessage" />
 <div class="text-center">
     <h1 class="display-4">Xin chào</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<p>
+    @Url.ActionLink() 
+</p>
+<p>
+    @Url.Action()
+</p>
+<p>
+    @Url.Action("Privacy")
+</p>
+<p>
+    @Url.Action("Privacy", new {id=123, name="HTL"})
+</p>
+<p>
+    @Url.Action("Earth", "Planet")
+</p>
+<p>
+    @Url.Action("PlanetInfo", "Planet", new {id=3})
+</p>
+<p>
+    @Url.Action("Index", "Product", new {area="ProductManage", id=2})
+</p>
+<p>
+    @Url.RouteUrl("default", new {controller = "Home", action = "Hello", id=123, name="HTL" })
+</p>
+<p>
+    @Url.RouteUrl("neptune1")
+</p>
+
+
+@{
+    var routeData = new Dictionary<string, string>() {
+        {"name", "HTL"},
+        {"abc", "xyz"},
+        {"id", "3"}
+    };
+    //cũng có thể thiết lập trực tiếp trên thuộc tính 
+}
+<a asp-area="ProductManage" asp-action="ViewProduct" asp-controller="First"
+    asp-all-route-data="@routeData">
+    VD1
+</a>

@@ -1,0 +1,12 @@
+﻿@using CS68_MVC01.Models
+@model List<ProductModel>
+
+<h1>Danh sách sản phẩm</h1>
+<ul>
+	@foreach(var prod in Model)
+	{
+		<li>
+			@prod.Name
+		</li>
+	}
+</ul>
