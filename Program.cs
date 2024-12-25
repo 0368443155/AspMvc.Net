@@ -1,8 +1,10 @@
 ﻿using CS68_MVC01.ExtendMethods;
+using CS68_MVC01.Models;
 using CS68_MVC01.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.EntityFrameworkCore;
 using System.Net;
 
 namespace CS68_MVC01
@@ -13,6 +15,13 @@ namespace CS68_MVC01
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+
+			// Connect to database
+			builder.Services.AddDbContext<AppDbContext>(options =>
+			{
+				var connectionString = builder.Configuration.GetConnectionString("AppMvcConnectionString");
+				options.UseSqlServer(connectionString);
+			});
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
