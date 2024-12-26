@@ -50,7 +50,7 @@
 	<ul>
 		@foreach (System.Data.DataRow row in table.Rows)
 		{
-			@row["Table_Name"]
+			@row["TABLE_NAME"]
 		}
 	</ul>
 	<a class="btn btn-danger" asp-action="DeleteDb">Xóa Database: @dbName</a>

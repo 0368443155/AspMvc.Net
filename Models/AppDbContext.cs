@@ -32,5 +32,6 @@ namespace CS68_MVC01.Models
 			//}
 
 		}
+		public DbSet<Contact> Contacts { get; set; }
 	}
 }
